@@ -1,14 +1,12 @@
 # Classnames Utility
 A utility function for dynamically constructing className strings in JavaScript and TypeScript projects. This function combines base class names, conditional modifiers, and additional classes into a single, clean string.
-
 ## Installation
 
 You can install this package via npm:
 
-bash
+```bash
 npm i classnames-util
-
-
+```
 
 ## Usage
 
@@ -16,57 +14,55 @@ npm i classnames-util
 
 You can import the function into your project as follows:
 
-ES modules
+```ES modules
 import { classNames } from 'classnames-util';
-
+or
 const { classNames } = require('classnames-util');
-
-
-
+```
 
 ### Syntax
+
+```typescript
 classNames(
-cls: string,
-mods?: Record<string, boolean | string>,
-additional?: string[]
+    cls: string,
+    mods?: Record<string, boolean | string>,
+    additional?: string[]
 ): string
+```
 
-
-
-### Parameters
-
-| Parameter     | Type     | Default | Description                                           |
-|---------------|----------|---------|-------------------------------------------------------|
-| cls    | string |         | The base class name (always included in the result).  |
-| mods    | `Record<string, boolean | string>`   | Passed css styles that need to be added to the class. |
-| additional     | string[] | []     | An array of additional class names that are always included (e.g., computed or static class names).  |
 
 ### Return Value
 The function returns a string containing all included class names, separated by spaces. It's optimized for use in scenarios like dynamically constructing CSS class strings in frameworks such as React.
 
 ### Example
 
-javascript
-const { GameDifficultCoefCalculate } = require('game-difficult-coef-calculate');
-
-// Example 1: Basic usage with default parameters
-const difficulty1 = GameDifficultCoefCalculate(30);
-console.log(difficulty1); // Output: A calculated difficulty coefficient
+```javascript
+//Example 1: Basic Usage
+const className = classNames('button', { 'button--active': true, 'button--disabled': false }, ['extra-class']);
+console.log(className);
 
 // Example 2: Custom parameters
-const difficulty2 = GameDifficultCoefCalculate(75, 150, 5, 0.8, 3);
-console.log(difficulty2); // Output: A calculated difficulty coefficient with 3 decimal precision
+const isActive = true;
+const isDisabled = false;
 
+const className = classNames('button', { 'button--active': isActive, 'button--disabled': isDisabled });
+console.log(className);
 
+const additionalClasses = ['extra', 'another-extra'];
+//Example 3: Additional Classes
+const className = classNames('main', {}, additionalClasses);
+console.log(className);
+// Output: "main extra another-extra"
+
+```
 ### How It Works
-
 1. **Base Class**: Always includes the base class (cls).
 2. **Modifiers**: Iterates through the mods object. If a key's value is truthy (true or a non-empty string), the key is included in the final class name string.
 3. **Additional Classes**: Includes all strings in the additional array.
 
 
-
 ## Why Use This?
+
 
 Why Use This?
 
