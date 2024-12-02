@@ -1,14 +1,23 @@
 {
-  "name": "${PROJECT_NAME}",
+  "name": "classnames-util",
   "version": "1.0.0",
-  "description": "",
+  "description": "A utility function for dynamically constructing className strings in JavaScript and TypeScript projects. This function combines base class names, conditional modifiers, and additional classes into a single, clean string.",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc"
   },
+  "keywords": [
+    "classnames",
+    "easycss",
+    "typescript",
+    "react"
+  ],
   "dependencies": {},
   "devDependencies": {
     "typescript": "^5.5.3"
   },
+  "author": "Klimenko Daniil",
+  "license": "MIT",
+
   "private": true
 }
