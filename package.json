@@ -1,6 +1,6 @@
 {
   "name": "classnames-util",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A utility function for dynamically constructing className strings in JavaScript and TypeScript projects. This function combines base class names, conditional modifiers, and additional classes into a single, clean string.",
   "main": "dist/index.js",
   "scripts": {

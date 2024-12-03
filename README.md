@@ -40,6 +40,7 @@ The function returns a string containing all included class names, separated by 
 //Example 1: Basic Usage
 const className = classNames('button', { 'button--active': true, 'button--disabled': false }, ['extra-class']);
 console.log(className);
+// Output: "button button--active extra-class"
 
 // Example 2: Custom parameters
 const isActive = true;
@@ -47,6 +48,7 @@ const isDisabled = false;
 
 const className = classNames('button', { 'button--active': isActive, 'button--disabled': isDisabled });
 console.log(className);
+// Output: "button button--active"
 
 const additionalClasses = ['extra', 'another-extra'];
 //Example 3: Additional Classes
